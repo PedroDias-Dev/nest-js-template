@@ -2,7 +2,7 @@ version: '2'
 services:
 
   web:
-    container_name: kinja-api
+    container_name: teste-api
     build: docker/dev
     ports:
       - "3333:3333"
@@ -15,10 +15,10 @@ services:
       - database
 
   database:
-    container_name: kinja-database
+    container_name: teste-database
     image: postgres:11.5-alpine
     environment:
-      - POSTGRES_DB=kinja
+      - POSTGRES_DB=teste
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=108001
     volumes:

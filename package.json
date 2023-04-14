@@ -5,8 +5,8 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "kinja-repository",
-    "seed": "git@bitbucket.org:kinja/kinja-base-api.git"
+    "url": "",
+    "seed": "git@bitbucket.org:kinja/teste-api-api.git"
   },
   "scripts": {
     "dev": "yarn ts-node-dev --inspect=0.0.0.0:9229 --respawn --no-notify --transpileOnly --no-deps --project tsconfig.dev.json ./src/index.ts",
