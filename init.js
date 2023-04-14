@@ -153,7 +153,7 @@ async function resetGit(params) {
     await execCommand(`git remote add origin ${params.repository}`);
   }
 
-  await execCommand('git add . && git commit -am "Initial Setup"');
+  await execCommand('git add . && git commit -am "Initial Setup" --no-verify');
 
   await execCommand('git branch development');
 
