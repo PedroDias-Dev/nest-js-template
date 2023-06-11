@@ -48,6 +48,34 @@ export class ExceptionFilter extends BaseExceptionFilter {
       });
     }
 
-    super.catch(exception, host);
+    const custom = new HttpException(
+      {
+        ...exception.message,
+        message: exception.message.message || this.defaultMessages(exception)
+      },
+      status
+    );
+
+    super.catch(custom, host);
+  }
+
+  private defaultMessages(exception: any): string {
+    switch (exception.message.error) {
+      case 'Bad Request':
+        return 'Houve um erro ao processar a sua requisição, tente novamente mais tarde.';
+      case 'Unauthorized':
+        return 'Você não tem permissão para acessar este recurso.';
+      case 'Forbidden':
+        return 'Você não tem permissão para acessar este recurso.';
+      case 'Not Found':
+        return 'O recurso solicitado não foi encontrado.';
+      case 'Internal Server Error':
+        return 'Houve um erro interno no servidor, tente novamente mais tarde.';
+      case 'Conflict':
+        return 'Já existe um recurso com os dados informados.';
+
+      default:
+        return exception.message.error;
+    }
   }
 }

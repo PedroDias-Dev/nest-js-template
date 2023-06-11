@@ -1,10 +1,12 @@
+/* eslint-disable prettier/prettier */
 import {
   CanActivate,
   createParamDecorator,
   ExecutionContext,
+  ForbiddenException,
   Injectable,
   SetMetadata,
-  UseGuards
+  UseGuards,
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { ApiBearerAuth } from '@nestjs/swagger';
@@ -21,7 +23,7 @@ export class TokenGuard implements CanActivate {
     const user: ICurrentUser = request.user;
 
     if (!user) {
-      return false;
+      throw new ForbiddenException();
     }
 
     const roles =

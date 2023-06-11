@@ -21,10 +21,10 @@ export class AuthService {
 
   public async login(model: LoginValidator): Promise<{ accessToken: String; refreshToken: string }> {
     const user = await this.userRepository.findByEmail(model.email);
-    if (!user) throw new NotFoundException();
+    if (!user) throw new NotFoundException('Usuário não encontrado');
 
     const isValid = await this.passwordService.compare(user.password, model.password);
-    if (!isValid) throw new BadRequestException();
+    if (!isValid) throw new BadRequestException('Senha incorreta, tente novamente.');
 
     const token = uuid();
 
