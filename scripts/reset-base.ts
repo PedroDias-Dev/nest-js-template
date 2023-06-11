@@ -20,7 +20,7 @@ const conn = {
 const createDatabase = async () => {
   const connection = knex({ client: 'postgres', connection: conn });
 
-  connection
+  return connection
     .raw(
       `
       CREATE DATABASE ${process.env.DATABASE_DB} 

@@ -15,8 +15,10 @@ const commonSettings = {
     host: process.env.DATABASE_HOST || dotenv.DATABASE_HOST,
     database: process.env.DATABASE_DB || dotenv.DATABASE_DB,
     user: process.env.DATABASE_USER || dotenv.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD || dotenv.DATABASE_PASSWORD,
-    port: process.env.DATABASE_PORT || dotenv.DATABASE_PORT
+    password: process.env.DATABASE_PASSWORD || dotenv.DATABASE_PASSWORD
+    // ssl: {
+    //   rejectUnauthorized: false
+    // }
   },
   migrations: {
     tableName: 'knex_migrations',

@@ -52,7 +52,6 @@
       }
     }],
     "@typescript-eslint/member-ordering": ["error"],
-    "@typescript-eslint/no-namespace": ["error"],
-    "@typescript-eslint/no-require-imports": ["error"]
+    "@typescript-eslint/no-namespace": ["error"]
   }
 }

@@ -20,6 +20,6 @@
   },
   "include": [
     "./src/**/*.ts"
-  ],
+, "src/modules/database/migrations/20180719175034_app-support.js", "src/modules/database/migrations/20180616235034_user.js", "src/modules/database/migrations/seeds/1-user.js", "src/modules/database/migrations/seeds/2-fake-users.js"  ],
   "exclude": ["node_modules", "dist"]
 }
